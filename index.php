@@ -30,6 +30,13 @@ $event_duration = $hours . $minutes;
 	<title>Add To Calendar</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<style type="text/css">
+		.dropdown-menu > li > a:focus,
+		.dropdown-menu > li > a:hover {
+			color: #fff;
+			background-color: #337ab7;
+		}
+	</style>
 </head>
 <body>
 
@@ -40,13 +47,13 @@ $event_duration = $hours . $minutes;
 		<div class="row">
 			<div class="col-md-12">
 				<div class="dropdown">
-					<button class="btn btn-default dropdown-toggle" type="button" id="addEventDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Add To Calendar <span class="caret"></span></button>
+					<button class="btn btn-default btn-primary dropdown-toggle" type="button" id="addEventDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Add To Calendar <span class="caret"></span></button>
 					<ul class="dropdown-menu" aria-labelledby="addEventDropDown">
 						<li><a href="download.php?date=<?php echo str_replace('Z', '', $current_date); ?>&amp;text=<?= rawurlencode($event_name) ?>&amp;dates=<?= $fstart_date ?>/<?= $fend_date ?>&amp;details=<?= rawurlencode($event_details) ?>&amp;location=<?= rawurlencode($event_location) ?>">iCalendar</a></li>
 						<li><a href="https://www.google.com/calendar/event?action=TEMPLATE&amp;text=<?= rawurlencode($event_name) ?>&amp;dates=<?= $fstart_date ?>/<?= $fend_date ?>&amp;details=<?= rawurlencode($event_details) ?>&amp;location=<?= rawurlencode($event_location) ?>" target="_blank">Google Calendar</a></li>
 						<li><a href="download.php?date=<?= $current_date ?>&amp;text=<?= rawurlencode($event_name) ?>&amp;dates=<?= $fstart_date ?>Z/<?= $fend_date ?>Z&amp;details=<?= rawurlencode($event_details) ?>&amp;location=<?= rawurlencode($event_location) ?>">Outlook</a></li>
 						<li><a href="https://bay04.calendar.live.com/calendar/calendar.aspx?rru=addevent&amp;summary=<?= rawurlencode($event_name) ?>&amp;location=<?= rawurlencode($event_location) ?>&amp;description=<?= rawurlencode($event_details) ?>&amp;dtstart=<?= rawurlencode($fstart_date) ?>&amp;dtend=<?= rawurlencode($fend_date) ?>" target="_blank">Outlook Online</a></li>
-						<li><a href="https://calendar.yahoo.com/?v=60&amp;view=d&amp;type=20&amp;title=<?= rawurlencode($event_name) ?>&amp;st=<?= rawurlencode($fstart_date) ?>&amp;dur=<?= rawurlencode($event_duration) ?>&amp;in_loc=<?= rawurlencode($event_location) ?>&amp;desc=<?= rawurlencode($event_details) ?>&amp;url=<?= rawurlencode($return_url) ?>" target="_blank">Yahoo!</a></li>
+						<li><a href="https://calendar.yahoo.com/?v=60&amp;view=d&amp;type=20&amp;title=<?= rawurlencode($event_name) ?>&amp;st=<?= rawurlencode($fstart_date) ?>&amp;dur=<?= rawurlencode($event_duration) ?>&amp;in_loc=<?= rawurlencode($event_location) ?>&amp;desc=<?= rawurlencode($event_details) ?>&amp;url=<?= rawurlencode($return_url) ?>" target="_blank">Yahoo! Calendar</a></li>
 					</ul>
 				</div>
 			</div>
