@@ -1,15 +1,20 @@
 <?php
 
-// force file download
-header("Content-type: text/plain");
-header("Content-Disposition: attachment; filename=calendar-event-" . date('Ymd') . ".ics");
-
 // set the variables
+if( isset( $_GET['format'] ) ) $format = $_GET['format'];
 if( isset( $_GET['date'] ) ) $current_date = $_GET['date'];
 if( isset( $_GET['dates'] ) ) $dates = $_GET['dates'];
 if( isset( $_GET['location'] ) ) $event_location = $_GET['location'];
 if( isset( $_GET['text'] ) ) $event_name = $_GET['text'];
 if( isset( $_GET['details'] ) ) $event_details = str_replace("\\n", "\\\\n", $_GET['details']);
+
+$filename = "calendar-event-";
+if( isset($format) ) $filename .= $format . "-";
+$filename .= date('Ymd') . ".ics";
+
+// force file download
+header("Content-type: text/plain");
+header("Content-Disposition: attachment; filename=" . $filename);
 
 // split the start and end dates
 $dateparts = explode('/', $dates);
