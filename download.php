@@ -6,7 +6,7 @@ if( isset( $_GET['date'] ) ) $current_date = $_GET['date'];
 if( isset( $_GET['dates'] ) ) $dates = $_GET['dates'];
 if( isset( $_GET['location'] ) ) $event_location = $_GET['location'];
 if( isset( $_GET['text'] ) ) $event_name = $_GET['text'];
-if( isset( $_GET['details'] ) ) $event_details = str_replace("\\n", "\\\\n", $_GET['details']);
+if( isset( $_GET['details'] ) ) $event_details = str_replace("\n", "\\n", $_GET['details']);
 
 $filename = "calendar-event-";
 if( isset($format) ) $filename .= $format . "-";

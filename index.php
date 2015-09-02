@@ -4,7 +4,7 @@
 $start_date = "2015-09-02 12:00:00";
 $end_date = "2015-09-02 13:00:00";
 $event_name = "Example Event";
-$event_details = "Event Details Here\n\n--\nhttp://example.com";
+$event_details = htmlspecialchars('Event Details Here\n\n--\nhttp://example.com');
 $event_location = "123 Main St, Example, NY";
 $return_url = "http://www.90octane.com/"; // return url for yahoo
 
@@ -49,9 +49,9 @@ $event_duration = $hours . $minutes;
 				<div class="dropdown">
 					<button class="btn btn-default btn-primary dropdown-toggle" type="button" id="addEventDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Add To Calendar <span class="caret"></span></button>
 					<ul class="dropdown-menu" aria-labelledby="addEventDropDown">
-						<li><a href="download.php?date=<?php echo str_replace('Z', '', $current_date); ?>&amp;text=<?= rawurlencode($event_name) ?>&amp;dates=<?= $fstart_date ?>/<?= $fend_date ?>&amp;details=<?= rawurlencode($event_details) ?>&amp;location=<?= rawurlencode($event_location) ?>">iCalendar</a></li>
+						<li><a href="download.php?format=icalendar&amp;date=<?php echo str_replace('Z', '', $current_date); ?>&amp;text=<?= rawurlencode($event_name) ?>&amp;dates=<?= $fstart_date ?>/<?= $fend_date ?>&amp;details=<?= rawurlencode($event_details) ?>&amp;location=<?= rawurlencode($event_location) ?>">iCalendar</a></li>
 						<li><a href="https://www.google.com/calendar/event?action=TEMPLATE&amp;text=<?= rawurlencode($event_name) ?>&amp;dates=<?= $fstart_date ?>/<?= $fend_date ?>&amp;details=<?= rawurlencode($event_details) ?>&amp;location=<?= rawurlencode($event_location) ?>" target="_blank">Google Calendar</a></li>
-						<li><a href="download.php?date=<?= $current_date ?>&amp;text=<?= rawurlencode($event_name) ?>&amp;dates=<?= $fstart_date ?>Z/<?= $fend_date ?>Z&amp;details=<?= rawurlencode($event_details) ?>&amp;location=<?= rawurlencode($event_location) ?>">Outlook</a></li>
+						<li><a href="download.php?format=outlook&amp;date=<?= $current_date ?>&amp;text=<?= rawurlencode($event_name) ?>&amp;dates=<?= $fstart_date ?>Z/<?= $fend_date ?>Z&amp;details=<?= rawurlencode($event_details) ?>&amp;location=<?= rawurlencode($event_location) ?>">Outlook</a></li>
 						<li><a href="https://bay04.calendar.live.com/calendar/calendar.aspx?rru=addevent&amp;summary=<?= rawurlencode($event_name) ?>&amp;location=<?= rawurlencode($event_location) ?>&amp;description=<?= rawurlencode($event_details) ?>&amp;dtstart=<?= rawurlencode($fstart_date) ?>&amp;dtend=<?= rawurlencode($fend_date) ?>" target="_blank">Outlook Online</a></li>
 						<li><a href="https://calendar.yahoo.com/?v=60&amp;view=d&amp;type=20&amp;title=<?= rawurlencode($event_name) ?>&amp;st=<?= rawurlencode($fstart_date) ?>&amp;dur=<?= rawurlencode($event_duration) ?>&amp;in_loc=<?= rawurlencode($event_location) ?>&amp;desc=<?= rawurlencode($event_details) ?>&amp;url=<?= rawurlencode($return_url) ?>" target="_blank">Yahoo! Calendar</a></li>
 					</ul>
