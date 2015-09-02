@@ -40,7 +40,7 @@ $event_duration = $hours . $minutes;
 		<div class="row">
 			<div class="col-md-12">
 				<div class="dropdown">
-					<button class="btn btn-default dropdown-toggle" type="button" id="addEventDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Dropdown <span class="caret"></span></button>
+					<button class="btn btn-default dropdown-toggle" type="button" id="addEventDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Add To Calendar <span class="caret"></span></button>
 					<ul class="dropdown-menu" aria-labelledby="addEventDropDown">
 						<li><a href="download.php?date=<?php echo str_replace('Z', '', $current_date); ?>&amp;text=<?= rawurlencode($event_name) ?>&amp;dates=<?= $fstart_date ?>/<?= $fend_date ?>&amp;details=<?= rawurlencode($event_details) ?>&amp;location=<?= rawurlencode($event_location) ?>">iCalendar</a></li>
 						<li><a href="https://www.google.com/calendar/event?action=TEMPLATE&amp;text=<?= rawurlencode($event_name) ?>&amp;dates=<?= $fstart_date ?>/<?= $fend_date ?>&amp;details=<?= rawurlencode($event_details) ?>&amp;location=<?= rawurlencode($event_location) ?>" target="_blank">Google Calendar</a></li>
