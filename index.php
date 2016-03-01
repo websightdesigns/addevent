@@ -1,11 +1,11 @@
 <?php
 
 // configure event details
-$start_date = "2015-09-02 12:00:00";
-$end_date = "2015-09-02 13:00:00";
+$start_date = "2016-03-12 10:00:00"; // 10am
+$end_date = "2016-03-12 16:00:00"; // 4pm
 $event_name = "Example Event";
 $event_details = htmlspecialchars('Event Details Here\n\n--\nhttp://example.com');
-$event_location = "123 Main St, Example, NY";
+$event_location = "123 Main St, Example, NY 20001";
 $return_url = "http://www.90octane.com/"; // return url for yahoo
 
 // do not edit below this line
