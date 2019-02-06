@@ -6,7 +6,7 @@ $end_date = "2019-02-21 16:00:00"; // 4pm
 $event_name = "Example Event";
 $event_details = htmlspecialchars('Event Details Here\n\n--\nhttp://example.com');
 $event_location = "123 Main St, Example, NY 20001";
-$return_url = "http://www.90octane.com/"; // return url for yahoo
+$return_url = "http://www.example.com/"; // return url for yahoo
 
 // do not edit below this line
 $current_date = str_replace( '-', '', str_replace( ':', '', gmdate('Y-m-d\TH:i:s\Z') ) );
